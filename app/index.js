@@ -9,15 +9,15 @@ $(document).ready(function () {
     });
   });
 
-  $('#noun').click(function(){
+  $('#name').click(function(){
     $.get("http://localhost:3000/nouns",function(response) {
       console.log(response);
       $('#noun').text(response);
-      $('#adjective').css('text-decoration','underline');
+      $('#noun').css('text-decoration','underline');
     });
   });
 
-  $('#verb').click(function(){
+  $('#name').click(function(){
     $.get("http://localhost:3000/verbs",function(response) {
       console.log(response);
       $('#verb').text(response);
