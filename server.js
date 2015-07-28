@@ -17,6 +17,14 @@ app.get("/adjectives", function(req, res) {
   res.json(getRandomWord(adjectives));
 });
 
+app.get("/nouns", function(req, res) {
+  res.json(getRandomWord(nouns));
+});
+
+app.get("/verbs", function(req, res) {
+  res.json(getRandomWord(verbs));
+});
+
 function Adjectives(){
   this.cute = true;
   this.kawaii = true;
@@ -24,7 +32,23 @@ function Adjectives(){
   this.dynamite = true;
 }
 
+function Nouns(){
+  this.mirror = true;
+  this.random = true;
+  this.risk = true;
+  this.traffic = true;
+}
+
+function Verbs(){
+  this.doubt = true;
+  this.deserve = true;
+  this.recognise = true;
+  this.prevent = true;
+}
+
 var adjectives = new Adjectives();
+var nouns = new Nouns();
+var verbs = new Verbs();
 
 function getRandomWord(object) {
   var propArray = Object.keys(object);

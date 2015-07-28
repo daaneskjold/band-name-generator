@@ -9,6 +9,22 @@ $(document).ready(function () {
     });
   });
 
+  $('#noun').click(function(){
+    $.get("http://localhost:3000/nouns",function(response) {
+      console.log(response);
+      $('#noun').text(response);
+      $('#adjective').css('text-decoration','underline');
+    });
+  });
+
+  $('#verb').click(function(){
+    $.get("http://localhost:3000/verbs",function(response) {
+      console.log(response);
+      $('#verb').text(response);
+      $('#verb').css('text-decoration','underline');
+    });
+  });
+
   $('#name').hover(function() {
     $(this).css("background-color", "orange");
     }, function(){
