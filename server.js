@@ -1,5 +1,7 @@
-var getRandomWord = require('./lib/getRandomWord')
-var Adjectives = require('./lib/adjective')
+var getRandomWord = require('./lib/getRandomWord');
+var Adjectives = require('./lib/adjective');
+var Nouns = require('./lib/nouns');
+var Verbs = require('./lib/verbs');
 var express = require("express");
 var app = express();
 var port = process.env.PORT || 3000;
@@ -14,7 +16,6 @@ app.listen(port, function() {
 });
 
 app.get("/", function(req, res) {
-  //res.send('Hello!!');
   res.sendFile(index.html);
 });
 
@@ -33,21 +34,6 @@ app.get("/verbs", function(req, res) {
 app.post("/userAdjective", function(req, res) {
   res.json(postWord(req.body.word,adjectives));
 });
-
-
-function Nouns(){
-  this.mirror = true;
-  this.random = true;
-  this.risk = true;
-  this.traffic = true;
-}
-
-function Verbs(){
-  this.doubt = true;
-  this.deserve = true;
-  this.recognise = true;
-  this.prevent = true;
-}
 
 var adjectives = new Adjectives();
 var nouns = new Nouns();
