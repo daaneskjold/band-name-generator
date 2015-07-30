@@ -35,16 +35,24 @@ app.post("/userAdjective", function(req, res) {
   res.json(postWord(req.body.word,adjectives));
 });
 
+app.post("/userNoun", function(req, res) {
+  res.json(postWord(req.body.word,nouns));
+});
+
+app.post("/userVerb", function(req, res) {
+  res.json(postWord(req.body.word,verbs));
+});
+
 var adjectives = new Adjectives();
 var nouns = new Nouns();
 var verbs = new Verbs();
 
 function postWord (word, wordObject) {
   if (wordObject.hasOwnProperty(word)) {
-    return {msg: 'We already have the adjective ' + word + ' included in the list'};
+    return {msg: 'We already have the word ' + word + ' included in the list'};
   }
 
   wordObject[word] = true;
   console.log(wordObject);
-  return {msg: word + ' added to the adjective list'};
+  return {msg: word + ' added to the word list'};
 }

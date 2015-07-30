@@ -35,6 +35,8 @@ $(document).ready(function () {
   $('#submitWords').on('submit',function(e){
     e.preventDefault();
     var userAdjective = $('[name=adjective]').val();
+    var userNoun = $('[name = noun]').val();
+    var userVerb = $('[name = verb]').val();
     var adjPost;
 
     if (userAdjective){
@@ -45,5 +47,24 @@ $(document).ready(function () {
         $('#adjectiveRes').text(adjectiveRes);
       });
     }
+
+    if (userNoun){
+      adjPost = {word: userNoun};
+      $.post('userNoun', adjPost, function(response){
+        var nounRes = response.msg;
+        console.log(response.msg)
+        $('#nounRes').text(nounRes);
+      });
+    }
+
+    if (userVerb){
+      adjPost = {word: userVerb};
+      $.post('userVerb', adjPost, function(response){
+        var verbRes = response.msg;
+        console.log(response.msg)
+        $('#verbRes').text(verbRes);
+      });
+    }
+
   });
 });
