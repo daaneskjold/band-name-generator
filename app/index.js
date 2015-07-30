@@ -30,4 +30,20 @@ $(document).ready(function () {
     }, function(){
     $(this).css("background-color", "grey");
   });
+
+
+  $('#submitWords').on('submit',function(e){
+    e.preventDefault();
+    var userAdjective = $('[name=adjective]').val();
+    var adjPost;
+
+    if (userAdjective){
+      adjPost = {word: userAdjective};
+      $.post('userAdjective', adjPost, function(response){
+        var adjectiveRes = response.msg;
+        console.log(response.msg)
+        $('#adjectiveRes').text(adjectiveRes);
+      });
+    }
+  });
 });
