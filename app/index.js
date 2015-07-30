@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
   $('#name').click(function(){
-    $.get("http://localhost:3000/adjectives",function(response) {
+    $.get("adjectives",function(response) {
       console.log(response);
       $('#adjective').text(response);
       $('#adjective').css('text-decoration','underline');
@@ -10,7 +10,7 @@ $(document).ready(function () {
   });
 
   $('#name').click(function(){
-    $.get("http://localhost:3000/nouns",function(response) {
+    $.get("nouns",function(response) {
       console.log(response);
       $('#noun').text(response);
       $('#noun').css('text-decoration','underline');
@@ -18,7 +18,7 @@ $(document).ready(function () {
   });
 
   $('#name').click(function(){
-    $.get("http://localhost:3000/verbs",function(response) {
+    $.get("verbs",function(response) {
       console.log(response);
       $('#verb').text(response);
       $('#verb').css('text-decoration','underline');
