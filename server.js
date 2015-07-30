@@ -4,7 +4,7 @@ var Nouns = require('./lib/nouns');
 var Verbs = require('./lib/verbs');
 var express = require("express");
 var app = express();
-//var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3000;
 var bodyparser = require("body-parser");
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}));
