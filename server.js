@@ -43,6 +43,10 @@ app.post("/userVerb", function(req, res) {
   res.json(postWord(req.body.word,verbs));
 });
 
+app.get("http://localhost:3000/showWords", function(req, res) {
+  res.json(adjectives + nouns + verbs);
+});
+
 var adjectives = new Adjectives();
 var nouns = new Nouns();
 var verbs = new Verbs();

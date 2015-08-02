@@ -31,6 +31,11 @@ $(document).ready(function () {
     $(this).css("background-color", "grey");
   });
 
+  $('#showWords').hover(function() {
+    $(this).css("background-color", "orange");
+    }, function(){
+    $(this).css("background-color", "grey");
+  });
 
   $('#submitWords').on('submit',function(e){
     e.preventDefault();
@@ -65,6 +70,12 @@ $(document).ready(function () {
         $('#verbRes').text(verbRes);
       });
     }
-
   });
+
+  $('#showWords').click(function(){
+    $.get("showWords",function(response) {
+      console.log(response);
+    });
+  });
+
 });
