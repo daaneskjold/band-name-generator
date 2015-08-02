@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Band Name Generator</title>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="index.js"></script>
+  <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+  <h1>Random Band Name Generator</h1>
+
+  <button id='name'>Generate</button>
+  <p>
+    Your band name is: <span id='adjective'></span> <span id='noun'></span> <span id='verb'></span>
+  </p>
+
+  <h3>Submit words!</h3>
+  <form id='submitWords'>
+    <label for='user-adjective'>Give us an adjective:</label>
+    <input type='text' name='adjective' id='userAdjective'>
+    <label for='user-adjective'>Give us an verb:</label>
+    <input type='text' name='verb' id='userVerb'>
+    <label for='user-adjective'>Give us an noun:</label>
+    <input type='text' name='noun' id='userNoun'>
+    <input type='submit' value='Submit'>
+  </form>
+  <p id='adjectiveRes'></p>
+  <p id='verbRes'></p>
+  <p id='nounRes'></p>
+  <div>
+    <div id="showWords"><div>View Word List</div></div>
+    <table id="wordsSummary">
+    </table>
+  </div>
+
+</body>
+</html>

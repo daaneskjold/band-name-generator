@@ -1,0 +1,23 @@
+#name{
+  background-color: gray;
+  height: 50px;
+  width: 150px;
+  font-size: 24px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#showWords{
+  background-color: gray;
+  height: 50px;
+  width: 150px;
+  font-size: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+#showWords>div{
+  padding-top: 12px;
+  padding-left: 8px;
+}
